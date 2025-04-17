@@ -1,5 +1,7 @@
 ## Tâche 1
 
+# Partie 1
+
 Je sais que des erreurs ont été volontairement glissé dans le script.
 Je préfère lancer le script dans phpmyadmin pour avoir les codes d'erreur, ce sera plus rapide que de tout vérifier directement dans le fichier.
 
@@ -53,3 +55,27 @@ Je change l'ordre de création des tables.
 Je mets toutes les déclarations directement dans chaque table pour plus de clarté.
 
 Je relance le script SQL , aucune erreur. 
+
+# Partie 2
+
+Je regarde le script et je le compare aux données clients.
+
+En me basant sur le nombre d'erreurs dans le script de création de la BDD, il faut être vigilant sur chaque détail et tout revérifier ligne par ligne.
+
+Première chose au vu des id qui sont en autoincrement et qui ne se suivent pas cela évoque une base de données ou il y a eu des suppression et des ajouts multiples.
+
+Je change l'ordre d'insertion, pour les clés étrangères.
+
+Il y a des erreurs de syntaxes que je corrige.
+
+Le lit superposé devrait avoir deux places.
+
+Il manque la chambre 2 du ski hotel.
+
+Il n'y a pas les tarifs du premier hotel. 
+
+# Cas particulier
+
+"Comment vous feriez", je vais donc le décrire sans l'implémenter.
+
+Je créerai une table entière dédié aux indisponibilitées avec une date de début et une date de fin et la raison, ainsi qu'une clé étrangère lié à l'id de la chambre. 
