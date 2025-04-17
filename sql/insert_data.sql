@@ -39,6 +39,19 @@ INSERT INTO `salles_de_bain` (`id`, `nom`) VALUES
   (4,'Baignoire et WC séparé');
 
 -- ------------------------------------------------------
+-- Table `chambre_types`
+-- ------------------------------------------------------
+INSERT INTO `chambre_types` (`id`,`nom`,`description`,`id_salle_de_bain`) VALUES
+  (1,'Chambre Standard','1 lit simple avec douche (1 personne)',1),
+  (2,'Chambre Twin','2 lits simples avec douche (2 personnes)',1),
+  (3,'Chambre Twin +','2 lits simples avec douche et WC séparé (2 personnes)',2),
+  (4,'Chambre Double','1 lit double avec douche (2 personnes)',1),
+  (5,'Chambre Double +','1 lit double avec douche et WC séparé (2 personnes)',2),
+  (6,'Chambre Familiale','1 lit double, 2 lits superposés avec douche et WC séparé (4 personnes)',2),
+  (7,'Chambre Familiale +','1 lit double, 2 lits superposés avec bain et WC séparé (4 personnes)',4),
+  (8,'Chambre King Size','1 lit double large avec bain et WC séparé (2 personnes)',4);
+
+-- ------------------------------------------------------
 -- Table `chambres`
 -- ------------------------------------------------------
 INSERT INTO `chambres` (`id`,`id_hotel`,`id_type`,`numero`,`commentaire`) VALUES
@@ -70,22 +83,9 @@ INSERT INTO `chambres` (`id`,`id_hotel`,`id_type`,`numero`,`commentaire`) VALUES
   (28,4,8,'7',NULL),
   (29,1,5,'5','Réservée aux VIP');
 
---------------------------------------------------------
--- Table `chambre_types`
---------------------------------------------------------
-INSERT INTO `chambre_types` (`id`,`nom`,`description`,`id_salle_de_bain`) VALUES
-  (1,'Chambre Standard','1 lit simple avec douche (1 personne)',1),
-  (2,'Chambre Twin','2 lits simples avec douche (2 personnes)',1),
-  (3,'Chambre Twin +','2 lits simples avec douche et WC séparé (2 personnes)',2),
-  (4,'Chambre Double','1 lit double avec douche (2 personnes)',1),
-  (5,'Chambre Double +','1 lit double avec douche et WC séparé (2 personnes)',2),
-  (6,'Chambre Familiale','1 lit double, 2 lits superposés avec douche et WC séparé (4 personnes)',2),
-  (7,'Chambre Familiale +','1 lit double, 2 lits superposés avec bain et WC séparé (4 personnes)',4),
-  (8,'Chambre King Size','1 lit double large avec bain et WC séparé (2 personnes)',4);
-
---------------------------------------------------------
+-- ------------------------------------------------------
 -- Table `chambre_type_couchage`
---------------------------------------------------------
+-- ------------------------------------------------------
 INSERT INTO `chambre_type_couchage` (`id_type`,`id_couchage`,`qte`) VALUES
   (1,1,1),
   (2,1,2),
@@ -98,9 +98,9 @@ INSERT INTO `chambre_type_couchage` (`id_type`,`id_couchage`,`qte`) VALUES
   (7,4,2),
   (8,3,1);
 
---------------------------------------------------------
+-- ------------------------------------------------------
 -- Table `tarifs`
---------------------------------------------------------
+-- ------------------------------------------------------
 INSERT INTO `tarifs` (`id`,`id_hotel`,`id_type`,`date_debut`,`prix`) VALUES
   ( 8,2,1,'2021-12-15','57.49'),
   ( 9,2,2,'2021-12-15','68.99'),
@@ -154,5 +154,5 @@ INSERT INTO `tarifs` (`id`,`id_hotel`,`id_type`,`date_debut`,`prix`) VALUES
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
- /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
- /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

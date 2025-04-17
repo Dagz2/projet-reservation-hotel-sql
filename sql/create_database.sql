@@ -53,6 +53,7 @@ DROP TABLE IF EXISTS chambre_types;
 CREATE TABLE chambre_types (
   id INT UNSIGNED NOT NULL AUTO_INCREMENT,
   nom VARCHAR(50) NOT NULL,
+  description VARCHAR(80) NOT NULL,
   id_salle_de_bain INT UNSIGNED NOT NULL,          
   PRIMARY KEY (id),
   KEY idx_ct_sdb (id_salle_de_bain),
@@ -118,7 +119,7 @@ CREATE TABLE tarifs (
   id INT UNSIGNED NOT NULL AUTO_INCREMENT,
   id_hotel INT UNSIGNED DEFAULT NULL,                 
   id_type INT UNSIGNED DEFAULT NULL,                
-  dateDebut DATE DEFAULT NULL,
+  date_debut DATE DEFAULT NULL,
   prix DECIMAL(7,2) DEFAULT NULL,
   PRIMARY KEY (id),
   KEY idx_tarifs_hotel (id_hotel),
